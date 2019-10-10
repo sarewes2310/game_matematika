@@ -36,13 +36,38 @@ class _TambahPage extends State<TambahPage> {
   // Merubah data tombol jadi jawaban
   void parse_calculator(var nilai, int cek){
     if (cek == 1) {
-      setState(() {
-        jawaban_a += nilai;
-      });
+      /*print('[+] Panjang Nilai:');
+      print(nilai.length);
+      print(nilai);*/
+      if(nilai == '-'){
+        var parse = nilai + jawaban_a;
+        setState(() {
+          jawaban_a = parse;  
+        });
+      }else if(nilai == '.' && jawaban_a.length == 0){
+        setState(() {
+          jawaban_a += '';
+        });
+      }else{
+        setState(() {
+          jawaban_a += nilai;
+        });
+      }
     }else{
-      setState(() {
-        jawaban_b += nilai;
-      });
+      if(nilai == '-'){
+        var parse = nilai + jawaban_b;
+        setState(() {
+          jawaban_b = parse;  
+        });
+      }else if(nilai == '.' && jawaban_b.length == 0){
+        setState(() {
+          jawaban_b += '';
+        });
+      }else{
+        setState(() {
+          jawaban_b += nilai;
+        });
+      }
     }
   }
 
@@ -62,7 +87,7 @@ class _TambahPage extends State<TambahPage> {
     if(cek == 1){
       print(jawaban_a);
       print(_rumus_tambah(soal_a_1, soal_a_2));
-      if(_rumus_tambah(soal_a_1, soal_a_2) == int.parse(jawaban_a)){
+      if(_rumus_tambah(soal_a_1, soal_a_2) == double.parse(jawaban_a)){
         value_hidup = value_hidup + 1;
         nilai_canvas = nilai_canvas + 45.0;
         if(value_hidup == 4){
@@ -95,7 +120,7 @@ class _TambahPage extends State<TambahPage> {
         }
       }
     }else{
-      if(_rumus_tambah(soal_b_1,soal_b_2) == int.parse(jawaban_b)){
+      if(_rumus_tambah(soal_b_1,soal_b_2) == double.parse(jawaban_b)){
         value_hidup = value_hidup - 1;
         nilai_canvas = nilai_canvas - 45.0;
         if(value_hidup == -4){
@@ -292,7 +317,54 @@ class _TambahPage extends State<TambahPage> {
               ],
             ),
             // Tombol 0
-            ButtonTheme(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  textColor: Colors.white,
+                  color: Colors.blue,
+                  padding: const EdgeInsets.all(8.0),
+                  child: new Text(
+                    "-",
+                    style: TextStyle(fontSize: 22),
+                  ),
+                  onPressed: (){
+                    parse_calculator('-', nilai_cek_a);
+                    //cek_inisialisasi_a = 1;
+                  },
+                ),
+                SizedBox(width: 6,),
+                RaisedButton(
+                  textColor: Colors.white,
+                  color: Colors.blue,
+                  padding: const EdgeInsets.all(8.0),
+                  child: new Text(
+                    "0",
+                    style: TextStyle(fontSize: 22),
+                  ),
+                  onPressed: (){
+                      parse_calculator('0', nilai_cek_a);
+                      //cek_inisialisasi_a = 1;
+                    },
+                ),
+                SizedBox(width: 6,),
+                RaisedButton(
+                  textColor: Colors.white,
+                  color: Colors.blue,
+                  padding: const EdgeInsets.all(8.0),
+                  child: new Text(
+                    ".",
+                    style: TextStyle(fontSize: 22),
+                  ),
+                  onPressed: (){
+                    parse_calculator('.', nilai_cek_a);
+                    //cek_inisialisasi_a = 1;
+                  },
+                ),
+              ],
+            ),
+            // Tombol 0
+            /*ButtonTheme(
               minWidth: 280,
               child: RaisedButton(
                 textColor: Colors.white,
@@ -307,7 +379,7 @@ class _TambahPage extends State<TambahPage> {
                     //cek_inisialisasi_a = 1;
                   },
               ),
-            ),
+            ),*/
           ],
         ),
         
@@ -453,7 +525,7 @@ class _TambahPage extends State<TambahPage> {
                 ),
               ],
             ),
-            // Tombol 621
+            // Tombol 321
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -500,8 +572,54 @@ class _TambahPage extends State<TambahPage> {
                 ),
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  textColor: Colors.white,
+                  color: Colors.pink,
+                  padding: const EdgeInsets.all(8.0),
+                  child: new Text(
+                    "-",
+                    style: TextStyle(fontSize: 22),
+                  ),
+                  onPressed: (){
+                    parse_calculator('-', nilai_cek_b);
+                    //cek_inisialisasi_b = 1;
+                  },
+                ),
+                SizedBox(width: 6,),
+                RaisedButton(
+                  textColor: Colors.white,
+                  color: Colors.pink,
+                  padding: const EdgeInsets.all(8.0),
+                  child: new Text(
+                    "0",
+                    style: TextStyle(fontSize: 22),
+                  ),
+                  onPressed: (){
+                      parse_calculator('0', nilai_cek_b);
+                      //cek_inisialisasi_b = 1;
+                    },
+                ),
+                SizedBox(width: 6,),
+                RaisedButton(
+                  textColor: Colors.white,
+                  color: Colors.pink,
+                  padding: const EdgeInsets.all(8.0),
+                  child: new Text(
+                    ".",
+                    style: TextStyle(fontSize: 22),
+                  ),
+                  onPressed: (){
+                    parse_calculator('.', nilai_cek_b);
+                    //cek_inisialisasi_b = 1;
+                  },
+                ),
+              ],
+            ),
             // Tombol 0
-            ButtonTheme(
+            /*ButtonTheme(
               minWidth: 280,
               child: RaisedButton(
                 textColor: Colors.white,
@@ -516,7 +634,7 @@ class _TambahPage extends State<TambahPage> {
                     //cek_inisialisasi_b = 1;
                   },
               ),
-            ),
+            ),*/
           ],
         ),
         
