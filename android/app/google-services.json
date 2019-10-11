@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "793303801079",
+    "firebase_url": "https://gamematematika-23db4.firebaseio.com",
+    "project_id": "gamematematika-23db4",
+    "storage_bucket": "gamematematika-23db4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793303801079:android:5427c302ec9c4e508347f2",
+        "android_client_info": {
+          "package_name": "com.example.game_matematika"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793303801079-gj45dja2mild73vbeq31064e901e8j07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEmLTtglbwqdoRGo7Txlo2JpMuovxs-gk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793303801079-gj45dja2mild73vbeq31064e901e8j07.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -155,18 +155,19 @@ class _BagiPage extends State<BagiPage> {
   }
 
   @override
+  
   Widget build(BuildContext context) {
     // Inisialisasi nilai soal
     var nilai_cek_a = 1, nilai_cek_b = 0;
     var rng = new Random();
     if(cek_inisialisasi_a == 0){
       soal_a_2  = rng.nextInt(30);
-      soal_a_1 = soal_a_2 * rng.nextInt(30); 
+      soal_a_1 = soal_a_2 * rng.nextInt(10); 
       cek_inisialisasi_a = 1;
     }
     if(cek_inisialisasi_b == 0){
       soal_b_2 = rng.nextInt(30);
-      soal_b_1 = soal_b_2 * rng.nextInt(30);
+      soal_b_1 = soal_b_2 * rng.nextInt(10);
       cek_inisialisasi_b = 1;
     }
 
