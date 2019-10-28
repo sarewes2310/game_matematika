@@ -104,6 +104,8 @@ class _BagiPage extends State<BagiPage> {
                   child: Text('Restart'),
                   onPressed: (){
                     Navigator.pop(context, 'Ok');
+                    clear_jawaban(1);
+                    clear_jawaban(0);
                     nilai_canvas = 0.0;
                     jawaban_a = ''; 
                     jawaban_b = '';
@@ -137,6 +139,8 @@ class _BagiPage extends State<BagiPage> {
                   child: Text('Restart'),
                   onPressed: (){
                     Navigator.pop(context, 'Ok');
+                    clear_jawaban(1);
+                    clear_jawaban(0);
                     nilai_canvas = 0.0;
                     jawaban_a = ''; 
                     jawaban_b = '';

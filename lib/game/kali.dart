@@ -104,6 +104,8 @@ class _KaliPage extends State<KaliPage> {
                   child: Text('Restart'),
                   onPressed: (){
                     Navigator.pop(context, 'Ok');
+                    clear_jawaban(1);
+                    clear_jawaban(0);
                     nilai_canvas = 0.0;
                     jawaban_a = ''; 
                     jawaban_b = '';
@@ -137,6 +139,8 @@ class _KaliPage extends State<KaliPage> {
                   child: Text('Restart'),
                   onPressed: (){
                     Navigator.pop(context, 'Ok');
+                    clear_jawaban(1);
+                    clear_jawaban(0);
                     nilai_canvas = 0.0;
                     jawaban_a = ''; 
                     jawaban_b = '';
@@ -160,13 +164,13 @@ class _KaliPage extends State<KaliPage> {
     var nilai_cek_a = 1, nilai_cek_b = 0;
     var rng = new Random();
     if(cek_inisialisasi_a == 0){
-      soal_a_1 = rng.nextInt(20); 
-      soal_a_2  = rng.nextInt(20);
+      soal_a_1 = rng.nextInt(15); 
+      soal_a_2  = rng.nextInt(15);
       cek_inisialisasi_a = 1;
     }
     if(cek_inisialisasi_b == 0){
-      soal_b_1 = rng.nextInt(20);
-      soal_b_2 = rng.nextInt(20);
+      soal_b_1 = rng.nextInt(15);
+      soal_b_2 = rng.nextInt(15);
       cek_inisialisasi_b = 1;
     }
 
