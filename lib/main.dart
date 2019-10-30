@@ -220,9 +220,12 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               SizedBox(height: 50,),
               //Text('QUIZ MATEMATIKA',style: TextStyle(fontSize: 32),),
-              FittedBox(
-                child: Image.asset('assets/logo_title.png'),
-                fit: BoxFit.fill,
+              Padding(
+                padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: FittedBox(
+                  child: Image.asset('assets/logo_title.png'),
+                  fit: BoxFit.fill,
+                ),
               ),
               SizedBox(height: 20,),
               menu_tambah,
